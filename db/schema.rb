@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327192104) do
+ActiveRecord::Schema.define(version: 20150327194107) do
 
   create_table "goals", force: :cascade do |t|
     t.string   "title"
@@ -20,7 +20,22 @@ ActiveRecord::Schema.define(version: 20150327192104) do
     t.integer  "priority",   default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "user_id"
   end
+
+  add_index "goals", ["id"], name: "index_goals_on_id", unique: true
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id"
+
+  create_table "goals_and_lists", force: :cascade do |t|
+    t.integer  "list_id"
+    t.integer  "goal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "goals_and_lists", ["goal_id"], name: "index_goals_and_lists_on_goal_id"
+  add_index "goals_and_lists", ["id"], name: "index_goals_and_lists_on_id", unique: true
+  add_index "goals_and_lists", ["list_id"], name: "index_goals_and_lists_on_list_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
@@ -44,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150327192104) do
     t.datetime "updated_at",                 null: false
   end
 
+  add_index "lists", ["id"], name: "index_lists_on_id", unique: true
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"
 
   create_table "users", force: :cascade do |t|
