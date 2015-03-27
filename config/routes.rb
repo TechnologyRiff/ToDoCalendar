@@ -1,9 +1,33 @@
 Rails.application.routes.draw do
+  get 'goals/index'
+
+  get 'goals/show'
+
+  get 'goals/new'
+
+  get 'goals/edit'
+
+  get 'tasks/index'
+
+  get 'tasks/show'
+
+  get 'tasks/new'
+
+  get 'tasks/edit'
+
+  get 'lists/index'
+
+  get 'lists/show'
+
+  get 'lists/new'
+
+  get 'lists/edit'
+
   get 'welcome/index'
 
   get 'welcome/about'
 
-  root to: 'welcome/index'
+  root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

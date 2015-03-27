@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  completed: false
+  list_id: 
+  priority: 
+  difficulty: 
+  detail: MyText
+
+two:
+  title: MyString
+  completed: false
+  list_id: 
+  priority: 
+  difficulty: 
+  detail: MyText

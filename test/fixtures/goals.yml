@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  goal_met: false
+  body: MyText
+  priority: 1
+
+two:
+  title: MyString
+  goal_met: false
+  body: MyText
+  priority: 1
